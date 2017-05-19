@@ -1,43 +1,39 @@
 node('master') {
     stage('Build') {
         sh "echo Build"
-    }
-    stage('Test'){
-      parallel (
-        "JUnit": { 
-            sh "echo JUnit"
+		      parallel (
+        "TRS Build": { 
+            sh "echo TRS Build"
+			sh "sleep 2"
         },
-        "DBUnit": { 
-            sh "echo DBUnit"
-        },
-        "Jasmine": { 
-            sh "echo Jasmine"
+        "TMADMIN Build": { 
+            sh "echo TMADMIN Build"
+			sh "sleep 12"
         },
       )
     }
-    stage('Browser Tests'){
+    stage('DEV Deploy'){
       parallel (
-        "Firefox": { 
-            sh "echo Firefox"
+        "TRS Deploy": { 
+            sh "echo TRS Deploy"
+			sh "sleep 12"
         },
-        "Edge": { 
-            sh "echo Edge"
-        },
-        "Safari": { 
-            sh "echo Safari"
-        },
-        "Chrome": { 
-            sh "echo Chrome"
+        "TMADMIN Deploy": { 
+            sh "echo TMADMIN Deploy"
+			sh "sleep 5"
         },
       )
     }
-    stage('Dev'){
-        sh "echo Dev"
-    }
-    stage('Staging'){
-        sh "echo Staging"
-    }
-    stage('Production'){
-        sh "echo Production"
+    stage('DEV Tests'){
+      parallel (
+        "TRS DEV Test": { 
+            sh "echo TRS DEV Test"
+			sh "sleep 2"
+        },
+        "TMADMIN DEV Test": { 
+            sh "echo TMADMIN DEV Test"
+			sh "sleep 5"
+        },
+      )
     }
 }
