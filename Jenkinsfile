@@ -2,7 +2,7 @@ node('master') {
 
 stage ('Start'){}
 
-    stage('Build') {
+    stage('DEV Build') {
         sh "echo Build"
 		      parallel (
         "TRS Build": { 
@@ -40,7 +40,35 @@ stage ('Start'){}
       )
     }
 	
-	stage ('Final') {
-	input 'Proceed to PROD'
+	stage ('Pause') {
+	input 'Proceed to UAT'
 	}
+	
+	stage('UAT Deploy'){
+	  parallel (
+		"TRS Deploy": { 
+			sh "echo TRS Deploy"
+			sh "sleep 12"
+		},
+		"TMADMIN Deploy": { 
+			sh "echo TMADMIN Deploy"
+			sh "sleep 5"
+		},
+	  )
+	}
+    stage('UAT Tests'){
+      parallel (
+        "TRS Test": { 
+            sh "echo TRS Test"
+			sh "sleep 2"
+        },
+        "TMADMIN Test": { 
+            sh "echo TMADMIN Test"
+			sh "sleep 5"
+        },
+      )
+    }
+	
+	
+	
 }
