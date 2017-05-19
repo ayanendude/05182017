@@ -6,7 +6,7 @@ stage ('Start'){}
         sh "echo Build"
 		parallel (
         "TRS Build": { 
-		stage ('Test')
+		stage ('Test'){}
             sh "echo TRS Build"
 			sh "sleep 2"
         },
