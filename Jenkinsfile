@@ -2,10 +2,11 @@ node('master') {
 
 stage ('Start'){}
 
-    stage('DEV Build') {
+    stage('DEV') {
         sh "echo Build"
-		      parallel (
+		parallel (
         "TRS Build": { 
+		stage ('Test')
             sh "echo TRS Build"
 			sh "sleep 2"
         },
