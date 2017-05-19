@@ -1,4 +1,7 @@
 node('master') {
+
+stage ('Start'){}
+
     stage('Build') {
         sh "echo Build"
 		      parallel (
