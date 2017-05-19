@@ -36,4 +36,7 @@ node('master') {
         },
       )
     }
+	
+	stage ('Final') {
+	Input 'Proceed to PROD'}
 }
