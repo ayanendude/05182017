@@ -43,6 +43,8 @@ stage ('Start'){}
       )
     }
 	
+	checkpoint 'about to deploy'
+	
 	stage ('Pause') {
 	input 'Proceed to UAT'
 	def userInput = input(
