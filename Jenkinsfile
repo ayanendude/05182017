@@ -6,7 +6,7 @@ stage ('Start'){}
         sh "echo Build"
 		parallel (
         "TRS Build": { 
-		build jenkins_build
+		build 'jenkins_build'
 		stage ('Test'){ echo "TEST"}
 		//test stage
             sh "echo TRS Build"
