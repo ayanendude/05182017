@@ -43,6 +43,7 @@ stage ('Start'){}
       )
     }
 	
+	//checkpoint
 
 	
 	stage ('Pause') {
