@@ -10,7 +10,7 @@ stage ('Start'){}
 		stage ('Test'){ echo "TEST"}
 		//test stage
             sh "echo TRS Build"
-			sh "sleep 2"
+			sh "sleep 3"
         },
         "TMADMIN Build": { 
             sh "echo TMADMIN Build"
