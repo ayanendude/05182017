@@ -89,9 +89,10 @@ sh "echo env"
     }
 	
 	stage ('ITSM ') {
+	sh "rm -f /home/ayanendude/test_jenkins/test"
 	retry (5){
 	input 'Proceed to PROD'
-	sh "rm -f /home/ayanendude/test_jenkins/test"
+	
 	}
 	}
 	
