@@ -85,7 +85,9 @@ echo $env
     }
 	
 	stage ('ITSM ') {
+	retry (2){
 	input 'Proceed to PROD'
+	}
 	}
 	
 	
