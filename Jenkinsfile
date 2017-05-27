@@ -56,7 +56,7 @@ stage ('Start'){}
 echo ("Env: "+userInput['env'])
 echo ("Target: "+userInput['target'])
 
-sh "echo $env"
+sh "echo env"
 	}
 	
 	stage('UAT Deploy'){
