@@ -14,7 +14,7 @@ stage ('Start'){}
         },
         "TMADMIN Build": { 
             sh "echo TMADMIN Build"
-			sh "sleep 12"
+			sh "sleep 2"
         },
       )
     }
@@ -22,7 +22,7 @@ stage ('Start'){}
       parallel (
         "TRS Deploy": { 
             sh "echo TRS Deploy"
-			sh "sleep 12"
+			sh "sleep 2"
         },
         "TMADMIN Deploy": { 
             sh "echo TMADMIN Deploy"
@@ -63,7 +63,7 @@ sh "echo env"
 	  parallel (
 		"TRS Deploy": { 
 			sh "echo TRS Deploy"
-			sh "sleep 12"
+			sh "sleep 2"
 		},
 		"TMADMIN Deploy": { 
 			sh "echo TMADMIN Deploy"
