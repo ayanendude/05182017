@@ -4,6 +4,8 @@ stage ('Start'){}
 
     stage('DEV') {
         sh "echo Build"
+		sh "pwd"
+		sh "touch abc"
 		parallel (
         "TRS Build": { 
 		//build 'jenkins_build'
